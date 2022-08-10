@@ -15,7 +15,7 @@
         <form>
             <div class="py-5 px-10  bg-zinc-100 shadow-2xl rounded-xl">
                 <div class="flex justify-center">
-                <img class="rounded-full  w-32" src="{{URL::asset('/image/bungas.jpg')}}"/>
+                <img class="rounded-full  w-32" src="{{URL::asset('/image/login.jpg')}}"/>
                 </div>
          <h1 class="flex justify-center font-serif font-family:ui-serif text-3xl font-semibold mb-5 mt-4 ">
             LOGIN
