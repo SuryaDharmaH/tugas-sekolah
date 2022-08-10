@@ -6,7 +6,7 @@
   @vite('resources/css/app.css')
 </head>
 <body>
-<div class="bg-[url(https://media.istockphoto.com/vectors/cloud-pattern-seamless-vector-id701227978?b=1&k=20&m=701227978&s=612x612&w=0&h=NtVlNkEAphDadmSWd2yJPa2386_fuMpcka2SLx732QY=)]">
+<div class="bg-[url(https://static.vecteezy.com/system/resources/thumbnails/006/855/678/small/seamless-pattern-with-traditional-oriental-swirled-clouds-in-black-outline-on-white-background-minimalist-asian-background-for-greeting-card-mid-autumn-festival-aapi-heritage-month-vector.jpg)]">
 <section class="h-screen">
   <div class=" h-full text-gray-800">
     <div class="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6">
@@ -15,7 +15,7 @@
         <form>
             <div class="py-5 px-10  bg-zinc-100 shadow-2xl rounded-xl">
                 <div class="flex justify-center">
-                <img class="rounded-full  w-32" src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" alt="Avatar"/>
+                <img class="rounded-full  w-32" src="{{URL::asset('/image/bungas.jpg')}}"/>
                 </div>
          <h1 class="flex justify-center font-serif font-family:ui-serif text-3xl font-semibold mb-5 mt-4 ">
             LOGIN
@@ -42,7 +42,7 @@
           <div class="text-center lg:text-left">
             <button
               type="button"
-              class="inline-block px-10 py-2 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded hover:bg-blue-700"
+              class="inline-block px-10 py-2 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded-lg hover:bg-blue-700"
             >
               Login
             </button>
