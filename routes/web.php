@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MuridController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -12,10 +14,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Auth::routes();
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
+Route::get('/dashboard',[MuridController::class, 'index'])->name('dashboard');
+Route::get('/tambahmurid',[MuridController::class, 'tambahmurid'])->name('tambahmurid') ;
+Route::post('/insertdata',[MuridController::class, 'insertdata'])->name('insertdata') ;
+Route::get('/update/{id}',[MuridController::class, 'update'])->name('update') ;
+Route::post('/updatemurid/{id}',[MuridController::class, 'updatemurid'])->name('updatemurid') ;
+Route::get('/hapus/{id}',[MuridController::class, 'hapus'])->name('hapus') ;

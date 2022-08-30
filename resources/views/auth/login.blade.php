@@ -8,7 +8,6 @@
 </head>
 <body>
 <div class="bg-[url(https://static.vecteezy.com/system/resources/thumbnails/006/855/678/small/seamless-pattern-with-traditional-oriental-swirled-clouds-in-black-outline-on-white-background-minimalist-asian-background-for-greeting-card-mid-autumn-festival-aapi-heritage-month-vector.jpg)]">
-
 <nav class="p-3 fixed">
 <a href="https://www.instagram.com/surya.dhl/">
   <div class=" p-2">
@@ -23,7 +22,8 @@
 <section class="h-screen">
     <div class="flex xl:justify-center lg:justify-center justify-center items-center flex-wrap h-full g-6">
       <div class=" w-96 ">
-        <form>
+        <form method="POST" action="{{ route('login') }}">
+              @csrf
             <div class="pb-10 pt-7 px-10   bg-zinc-100 shadow-2xl rounded-xl">
                 <div class="flex justify-center">
                 <img class="rounded-full  w-32" src="{{URL::asset('/image/login.jpg')}}"/>
@@ -35,7 +35,8 @@
           <div class="mb-6">
             <input
               type="text"
-              class="form-control block rounded-md w-full px-4 py-1 text-xl font-normal text-gray-700 bg-white bg-clip-padding border-b border-[#4873c2]"
+              id="email"
+              class="form-control block rounded-md w-full px-4 py-1 text-base font-normal text-gray-700 bg-white bg-clip-padding border-b border-[#4873c2]"
               id="exampleFormControlInput2"
               placeholder="Username"/>
           </div>
@@ -44,7 +45,8 @@
           <div class="mb-6">
             <input
               type="password"
-              class="form-control block rounded-md w-full px-4 py-1 text-xl font-normal text-gray-700 bg-white bg-clip-padding border-b border-[#4873c2]"
+              id="password"
+              class="form-control block rounded-md w-full px-4 py-1 text-base font-normal text-gray-700 bg-white bg-clip-padding border-b border-[#4873c2]"
               id="exampleFormControlInput2"
               placeholder="Password"
             />
@@ -63,6 +65,7 @@
         </form>
       </div>
     </div>
+</div>
 </section>
 </body>
 </html>
