@@ -37,7 +37,7 @@
               type="text"
               class="form-control block rounded-md w-full px-4 py-1 text-xl font-normal text-gray-700 bg-white bg-clip-padding border-b border-[#4873c2]"
               id="exampleFormControlInput2"
-              placeholder="Email address"/>
+              placeholder="Username"/>
           </div>
 
           <!-- Password input -->
