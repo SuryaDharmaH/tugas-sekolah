@@ -18,7 +18,7 @@
                     <tr>
                         <td class="px-6 py-4">
                             <div class="flex items-center space-x-3">
-                                <div class="inline-flex w-10 h-10"> <img class='w-10 h-10 object-cover rounded-full' alt='User avatar' src="{{URL::asset('/image/login.jpg')}}" /> </div>
+                                <div class="inline-flex w-10 h-10"> <img class='w-10 h-10 object-cover rounded-full' alt='User avatar' src="{{URL::asset('/image/person.png')}}" /> </div>
                                 <div>
                                     <p class="text-sm font-semibold "> {{ $murid->name }} </p>
                                 </div>

@@ -56,7 +56,7 @@
           <div class="text-center lg:text-left">
             <a href="/dashboard">
             <button
-              type="button"class="inline-block px-10 py-2 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded-lg hover:bg-blue-700">
+              type="button"class="inline-block  px-32 py-2 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded-xl hover:bg-blue-700">
               Login
             </button>
             </a>

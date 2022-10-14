@@ -3,8 +3,10 @@
 @section('content')
 
     <div class="flex justify-center">
+    <div class="border bg-white shadow-2xl pl-32 pb-20 pt-20 pr-32">
     <form action="/updatemurid/{{ $data->id }}" method="POST" enctype="multipart/form-data">
                  @csrf
+                 <h1 class="flex justify-center mb-4 text-2xl  font-semibold">Edit Siswa</h1>
   <div class="flex flex-wrap -mx-3 mb-6">
     <div class="w-full px-3 mb-6 md:mb-0">
       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
@@ -73,5 +75,6 @@
     </div>
   </div>
 </form>
+</div>
 </div>
 @endsection
