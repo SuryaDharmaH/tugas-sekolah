@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MuridController;
 
@@ -18,6 +18,12 @@ Auth::routes();
 Route::get('/', function () {
     return view('auth.login');
 });
+/* login */
+Route::get('/register', [UserController::class, 'register'])->name('register');
+Route::post('/register_action', [UserController::class, 'register_action'])->name('register_action');
+Route::post('/login_action', [UserController::class, 'login_action'])->name('login_action');
+
+/* data murid */
 Route::get('/dashboard',[MuridController::class, 'index'])->name('dashboard');
 Route::get('/tambahmurid',[MuridController::class, 'tambahmurid'])->name('tambahmurid') ;
 Route::post('/insertdata',[MuridController::class, 'insertdata'])->name('insertdata') ;

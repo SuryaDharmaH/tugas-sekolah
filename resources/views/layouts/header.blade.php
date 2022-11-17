@@ -20,7 +20,7 @@
       <!-- Dropdown menu -->
       <div id="menu" class="hidden bg-white rounded mt-3  shadow dark:bg-gray-700 dark:divide-gray-600">
         <div class="py-3 px-4 text-sm text-gray-900 dark:text-white">
-        <div class="font-bold font-serif ">Halo,Admin</div>
+        <div class="font-bold font-serif ">Halo,{{ Auth::user()->name }}</div>
       </div>
         <div class="py-1">
         <a href="/" class=" block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
