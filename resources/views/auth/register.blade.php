@@ -6,21 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="shortcut icon" href="{{asset('image/login.jpg')}}">
+  <link rel="shortcut icon" href="{{asset('image-logo/logo.png')}}">
     @vite('resources/css/app.css')
 </head>
 <body>
 <div class="flex items-center justify-center min-h-screen bg-gray-300 ">
-    <div class="px-8 py-6 mx-4 mt-4 text-left bg-white shadow-lg md:w-1/3 lg:w-1/3 sm:w-1/3">
+    <div class="px-8 py-6 mx-4 mt-4 mb-5 text-left rounded-xl bg-zinc-100 shadow-lg md:w-1/3 lg:w-1/3 sm:w-1/3">
         <div class="flex justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-20 h-20 text-blue-600" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                <path
-                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
-            </svg>
+            <img class="rounded-full  w-32" src="{{URL::asset('/image-logo/logo.png')}}" alt="">
         </div>
         <h3 class="text-2xl font-bold text-center">Join us</h3>
         @if($errors->any())
@@ -56,9 +49,9 @@
                         Account</button>
                 </div>
                 <div class="mt-6 text-grey-dark">
-                    Already have an account?
-                    <a class="text-blue-600 hover:underline" href="/">
-                        Log in
+                    Sudah Punya Akun?
+                    <a class="text-blue-600 hover:underline" href="/login">
+                        Login
                     </a>
                 </div>
             </div>

@@ -22,6 +22,12 @@ class UserController extends Controller
             'username' => 'required|unique:tb_user',
             'password' => 'required',
             'password_confirm' => 'required|same:password',
+        ],
+        [
+            'name.required' => 'Nama Tidak Boleh Kosong',
+            'username.required' => 'Username Tidak Boleh Kosong',
+            'password.required' => 'Password Tidak Boleh Kosong',
+            'password_confirm.required' => 'Password Harus Sama'
         ]);
 
         $user = new User([
@@ -31,29 +37,27 @@ class UserController extends Controller
         ]);
         $user->save();
 
-        return redirect('/')->with('success', 'Registration success. Please login!');
-    }
-
-
-    public function login()
-    {
-        $data['title'] = 'Login';
-        return view('auth/login', $data);
+        return redirect('/login')->with('success', 'Registration Berhasil. Silahkan login');
     }
 
     public function login_action(Request $request)
     {
+        
         $request->validate([
             'username' => 'required',
             'password' => 'required',
+        ],
+        [
+            'username.required' => 'Masukan Username',
+            'password.required' => 'Masukan Password'
         ]);
         if (Auth::attempt(['username' => $request->username, 'password' => $request->password])) {
             $request->session()->regenerate();
-            return redirect('/dashboard')->with('success', 'oks');
+            return redirect('/dashboard');
         }
 
         return back()->withErrors([
-            'password' => 'Wrong username or password',
+            'password' => 'Username Atau Password Salah',
         ]);
     }
 }

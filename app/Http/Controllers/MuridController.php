@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\SiswaRequest;
 use App\Models\Murid; 
 
 class MuridController extends Controller
@@ -18,9 +21,9 @@ class MuridController extends Controller
     }
 
 
-    public function insertdata(Request $request){
+    public function insertdata(SiswaRequest $request){
         $data = Murid::create($request->all());
-        return redirect('/dashboard')->with('Sukses','Data Berhasil Ditambahkan');
+        return redirect('/dashboard')->with('succes','Data Berhasil Ditambahkan');
     }
 
     public function update($id){
@@ -35,7 +38,7 @@ class MuridController extends Controller
         $data = Murid::find($id);
         $data->update($request->all());
         
-        return redirect('/dashboard')->with('Sukses','Data Berhasil Diupdate');
+        return redirect('/dashboard')->with('sucess','Data Berhasil Diupdate');
 
 
     }
@@ -43,6 +46,6 @@ class MuridController extends Controller
         $data = Murid::find($id);
         $data->delete();
 
-        return redirect('/dashboard')->with('Sukses','Data Berhasil Dihapus');
+        return redirect('/dashboard')->with('success','Data Berhasil Dihapus');
     }
 }

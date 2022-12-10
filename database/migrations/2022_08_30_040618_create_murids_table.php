@@ -15,10 +15,11 @@ return new class extends Migration
     {
         Schema::create('murids', function (Blueprint $table) {
             $table->id();
-            $table->string('nisn');
             $table->string('name');
+            $table->string('nisn');
+            $table->enum('jeniskelamin',['Perempuan','Laki-Laki']);
             $table->enum('kelas',['X','XI','XII']);
-            $table->enum('jurusan',['RPL','TKJ','MM','DI','FILM','ANIMASI','PEKSOS','KI','TV']);
+            $table->enum('jurusan',['RPL A','RPL B',]);
             $table->enum('keahlian', ['Frontend','Backend']);
             $table->timestamps();
         });

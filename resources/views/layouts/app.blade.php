@@ -4,63 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <script src="https://cdn.tailwindcss.com"></script>
-      <link rel="shortcut icon" href="{{asset('image/login.jpg')}}">
+<link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.4/dist/flowbite.min.css" />
+  <link rel="shortcut icon" href="{{asset('image-logo/logo.png')}}">
+  <script src="https://cdn.tailwindcss.com"></script>
     @vite('resources/css/app.css')
-    <title></title>
 </head>
 <body>
     
-<nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
-  <div class="flex justify-between md:order-2">
-  <div id="user">
-      <button  onclick="toggleMenu()" type="button" class="flex mr-3 text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" >      
-        <img class="w-12 h-12 rounded-full" src="{{URL::asset('/image/login.jpg')}}" alt="user photo">
-      </button>
-      <!-- Dropdown menu -->
-      <div id="menu" class="hidden bg-white rounded mt-3  shadow dark:bg-gray-700 dark:divide-gray-600">
-        <div class="py-3 px-4 text-sm text-gray-900 dark:text-white">
-        <div class="font-bold font-serif ">Halo,{{ Auth::user()->name }}</div>
+  <nav class="flex bg-black border-gray-200 px-2 sm:px-4 py-1 dark:bg-gray-900">
+    <div class="container flex flex-wrap items-center mx-auto">
+    <a href="/dashboard" class="flex items-center">
+        <span class="ml-10 text-3xl font-bold sha text-white">DTSI</span>
+    </a>
+  </div>
+  <div class="flex container justify-end items-center ">
+    <div class="flex items-center md:order-2">
+      <div class="mr-7 ml-5">
+        <button type="button" class="flex text-sm bg-gray-800 rounded-full  focus:ring-4 focus:ring-gray-800" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+          <span class="sr-only">Open user menu</span>
+          <img class="w-11 h-11 rounded-full" src="{{URL::asset('/image-logo/logo.png')}}" alt="user photo">
+        </button>
       </div>
-        <div class="py-1">
-        <a href="/" class=" block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+        <!-- Dropdown menu -->
+        <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
+          <div class="px-5 text-center py-3">
+            <span class="block text-sm text-gray-900 dark:text-white font-bold">{{ Auth::user()->name }}</span>
+          </div>
+          <ul class="py-1" aria-labelledby="user-menu-button">
+            <hr>
+            <li>
+              <a href="/login" class="block px-4 py-2 text-sm  text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+            </li>
+          </ul>
         </div>
     </div>
-</div>
-<div>
-<div class=" items-center w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
-    <ul class="flex flex-col p-4 mt-4  rounded-lg  md:flex-row md:space-x-4 md:mt-0 md:text-sm md:font-medium ">
-      <li>
-        <a href="/tambahmurid" class="block py-3 pr-5 pl-5 text-white bg-black hover:bg-gray-900 rounded-md">Tambah Siswa</a>
-      </li>
-    
-    </ul>
+    <div>
+      <ul class="flex flex-col md:flex-row md:space-x-5  md:mt-0 md:text-sm font-medium ">
+        <a href="/tambahmurid" class="flex">
+          <svg class="w-6 h-6 text-white hover:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <li class="mt-0.5 text-center text-white hover:text-gray-300">
+          Tambah Siswa
+        </li>
+        </a>
+      </ul>
+    </div>
   </div>
-  </div>
-  </div>
-</nav>
+  </nav>
 @yield('content')
 
-  <!-- Javascript Login -->
-  <script>
-        var menu = document.getElementById("menu");
-
-        // open/close the menu when the user clicks on the button
-        function toggleMenu() {
-            if (menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden');
-            } else {
-                menu.classList.add('hidden');
-            }
-        }
-     // close the menu when the user clicks outside of it 
-     window.onclick = function (event) {
-            var dropdownWrapper = document.getElementById('user');
-            if (!dropdownWrapper.contains(event.target) && !menu.classList.contains('hidden')) {
-                menu.classList.add('hidden');
-            }
-        }
-    </script>
-
+<script src="https://unpkg.com/flowbite@1.5.4/dist/flowbite.js"></script>
 </body>
 </html>

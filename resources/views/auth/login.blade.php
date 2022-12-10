@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="shortcut icon" href="{{asset('image/login.jpg')}}">
+  <link rel="shortcut icon" href="{{asset('image-logo/logo.png')}}">
   @vite('resources/css/app.css')
 </head>
 <body>
@@ -24,9 +24,9 @@
         @endif
       <form action="/login_action" method="POST">
               @csrf
-            <div class="pb-10 pt-7 px-10   bg-zinc-100 shadow-2xl rounded-xl">
+            <div class="pb-10 pt-7 px-10 bg-zinc-100 shadow-2xl rounded-xl">
                 <div class="flex justify-center">
-                <img class="rounded-full  w-32" src="{{URL::asset('/image/login.jpg')}}"/>
+                <img class="rounded-full  w-36" src="{{URL::asset('/image-logo/logo.png')}}"/>
                 </div>
          <h1 class="flex justify-center font-serif font-family:ui-serif text-3xl font-semibold mb-5 mt-4 ">
             LOGIN
@@ -49,7 +49,7 @@
                       </button>
                 </div>
           <div class="mt-6 text-grey-dark text-center">
-                    Already have an account?
+                    Belum Punya Akun?
                     <a class="text-blue-600 hover:underline" href="/register">
                         Register
                     </a>

@@ -15,8 +15,11 @@ use App\Http\Controllers\MuridController;
 |
 */
 Auth::routes();
-Route::get('/', function () {
+Route::get('/login', function () {
     return view('auth.login');
+});
+Route::get('/', function () {
+    return view('landing_page');
 });
 /* login */
 Route::get('/register', [UserController::class, 'register'])->name('register');
